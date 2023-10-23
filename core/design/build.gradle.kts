@@ -1,6 +1,8 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    with(Plugins) {
+        id(ANDROID_LIBRARY)
+        id(JETBRAINS_KOTLIN_ANDROID)
+    }
 }
 
 android {
@@ -33,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.2"
+        kotlinCompilerExtensionVersion = "1.4.3"
     }
     packagingOptions {
         resources {
@@ -43,18 +45,16 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
-    implementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    with(Dependency) {
+        implementation(ANDROID_CORE_KTX)
+        implementation(COMPOSE_MATERIAL3)
+        implementation(COMPOSE_MATERIAL)
+        implementation(COMPOSE_UI)
+        implementation(COMPOSE_UI_TOOLING)
+        implementation(COMPOSE_UI_PREVIEW)
+    }
 
-    androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
