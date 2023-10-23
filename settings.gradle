@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "cmc_android"
 include ':app'
+include ':core:design'
+include ':core:common'
+include ':data'
+include ':domain'

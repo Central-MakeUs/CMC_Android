@@ -1,4 +1,4 @@
-package com.makeus
+package com.cmc_android
 
 import org.junit.Test
 

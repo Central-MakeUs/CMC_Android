@@ -1,4 +1,4 @@
-package com.makeus.ui.theme
+package com.makeus.cmc_android.theme
 
 import android.app.Activity
 import android.os.Build
